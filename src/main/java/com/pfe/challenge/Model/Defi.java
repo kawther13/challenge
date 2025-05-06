@@ -1,5 +1,6 @@
 package com.pfe.challenge.Model;
 
+import com.pfe.challenge.Model.enums.ConditionGain;
 import com.pfe.challenge.Model.enums.TypeContrat;
 import jakarta.persistence.*;
 
@@ -17,9 +18,16 @@ public class Defi {
     private LocalDate date_fin;
     private String concernes;
     private int nombre_contrat_min;
+    private String produitsConcernés;
 
+    @Embedded
+    private ConditionGain conditionGain;
     @Enumerated(EnumType.STRING)
     private TypeContrat type_contrat;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "agent_id")
+    private AgentMarketing agent;
 
     // ======== Getters ========
 
@@ -75,4 +83,24 @@ public class Defi {
     public void setType_contrat(TypeContrat type_contrat) {
         this.type_contrat = type_contrat;
     }
+
+    public String getProduitsConcernés() {
+        return produitsConcernés;
+    }
+
+    public AgentMarketing getAgent() {
+        return agent;
+    }
+
+    public ConditionGain getConditionGain() {
+        return conditionGain;
+    }
+
+    public void setProduitsConcernés(String produitsConcernés) {
+        this.produitsConcernés = produitsConcernés;
+    }
+
+    public void setAgent(AgentMarketing agent) { this.agent = agent; }
+    public void setConditionGain(ConditionGain conditionGain) { this.conditionGain = conditionGain; }
 }
+
