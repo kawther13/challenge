@@ -3,10 +3,8 @@ package com.pfe.challenge.Model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
-import java.util.Optional;
-
 @Entity
-public class ListeGagnantAgent {
+public class ListeeGagnantAgent {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -21,11 +19,11 @@ public class ListeGagnantAgent {
     private Challenge challenge;
 
 
-    public ListeGagnantAgent() {
+    public ListeeGagnantAgent() {
 
     }
 
-    public ListeGagnantAgent(Long id, String nomAgent, Double score, Double montant, int rang, Challenge challenge) {
+    public ListeeGagnantAgent(Long id, String nomAgent, Double score, Double montant, int rang, Challenge challenge) {
         this.id = id;
         this.nomAgent = nomAgent;
         this.score = score;

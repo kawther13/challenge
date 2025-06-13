@@ -5,4 +5,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ListeGagnantAgentRepository extends JpaRepository<ListeeGagnantAgent, Long> {}
+public interface ListeeGagnantAgentRepository extends JpaRepository<ListeeGagnantAgent, Long> {}

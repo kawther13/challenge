@@ -5,4 +5,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ListeGagnantChefRegionRepository extends JpaRepository<ListeeGagnantChefRegion, Long> {}
+public interface ListeeGagnantChefRegionRepository extends JpaRepository<ListeeGagnantChefRegion, Long> {}
